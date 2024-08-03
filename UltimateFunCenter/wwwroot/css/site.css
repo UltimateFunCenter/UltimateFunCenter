@@ -15,8 +15,45 @@ html {
 html {
   position: relative;
   min-height: 100%;
+  
+}
+
+
+body {
+    margin-bottom: 60px;
+
+
+
+    background-color: red;
+}
+
+h1 {
+    color: purple;
+}
+
+p {
+    color: red;
 }
 
 body {
-  margin-bottom: 60px;
+    background-image: url("ANDREW.jpg");
+    background-repeat: no-repeat;
+}
+.header {
+    top:0;
+    left:0;
+    width:auto;
+    padding:1.3rem 10%;
+    background:radial-gradient(0, 0, 0, .1);
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+
+}
+.navbar {
+    font-display: auto;
+    color:peru;
+    text-decoration: blink;
+    flow-from: inherit;
+
 }
