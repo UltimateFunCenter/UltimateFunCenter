@@ -11,7 +11,7 @@ namespace UltimateFunCenter.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("00000000000000_CreateIdentitySchema")]
-    partial class CreateIdentitySchema
+    partial class AddNewFacilityTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
