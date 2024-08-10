@@ -1,10 +1,10 @@
 html {
-  font-size: 14px;
+  font-size: 100%;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 100%) {
   html {
-    font-size: 16px;
+    font-size:50%;
   }
 }
 
@@ -13,62 +13,50 @@ html {
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+  position:relative;
+  min-height:100%;
   
 }
-
 
 body {
-  margin-bottom: 0px;
+  margin-bottom: 100%;
 }
 main{
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: 100%;
+    margin-left: 100%;
 }
-
-  
-    
-
-
-
-
-
-
-
+ 
 .navbar ul{
-    list-style-type:none;
-    background-color:deeppink;
-    padding:0px;
-    margin:0px;
-    overflow:hidden;
+    list-style-type: none;
+    padding:0%;
+    margin:0%;
+    
+    
 }
 
 .navbar a {
-    color: lightpink;
-    text-decoration: none;
-    padding: 2px;
+    color: none;
+    text-decoration: auto;
+    padding: 0%;
     display: block;
-    text-align:center;
+    text-align:left;
 
 
 }
 .navbar a:hover{
-    background-color: lightgoldenrodyellow;
-=======
-    margin-bottom: 60px;
+    margin-bottom: 50%;
+    background-color: yellow;
 
-
-
-    background-color: red;
 }
 
 h1 {
     color: purple;
+    text-align:center;
 }
 
 p {
     color: red;
+   
 
 }
 
@@ -79,10 +67,6 @@ body {
     background-size: 100% 100%;
 }
 
-
-
-
-}
 .header {
     top:0;
     left:0;
@@ -91,14 +75,25 @@ body {
     background:radial-gradient(0, 0, 0, .1);
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
-
-}
-.navbar {
-    font-display: auto;
-    color:peru;
-    text-decoration: blink;
-    flow-from: inherit;
+    
 
 }
 
+
+
+.navbar{
+    background-image: url("Logo.ico");
+    background-repeat:no-repeat;
+    background-attachment:local;
+    background-position:left;
+    background-size:5%;
+
+
+}
+.navbar{
+    background-origin: border-box;
+    background-color:rebeccapurple;
+    
+
+
+}
