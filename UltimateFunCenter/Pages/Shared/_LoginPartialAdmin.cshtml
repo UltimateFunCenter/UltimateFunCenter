@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+<ul class="navbar-nav">
+    @if(SignInManager.IsSignedIn(User))
+    {
+        <li class="nav-item">
+            <a class=" nav-link text-dark" asp-area="" asp-page="/Admin/AdminMainPage">Admin Home Page</a>
+        </li>
+
+        <li class="nav-item">
+            <a class=" nav-link text-dark" asp-area="" asp-page="/Admin/AdminUsersPage">Admin UsersPage</a>
+        </li>
+        <li class="nav-item">
+            <a class=" nav-link text-dark" asp-area="" asp-page="/Admin/FacilityPage">Admin FacilityPage</a>
+        </li>
+
+    }else{
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+        </li>
+    }
+</ul>
