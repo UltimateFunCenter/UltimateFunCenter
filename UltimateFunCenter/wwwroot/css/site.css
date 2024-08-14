@@ -15,8 +15,90 @@ html {
 html {
   position: relative;
   min-height: 100%;
+  
+}
+
+
+body {
+  margin-bottom: 0px;
+}
+main{
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+  
+    
+
+
+
+
+
+
+
+.navbar ul{
+    list-style-type:none;
+    background-color:deeppink;
+    padding:0px;
+    margin:0px;
+    overflow:hidden;
+}
+
+.navbar a {
+    color: lightpink;
+    text-decoration: none;
+    padding: 2px;
+    display: block;
+    text-align:center;
+
+
+}
+.navbar a:hover{
+    background-color: lightgoldenrodyellow;
+=======
+    margin-bottom: 60px;
+
+
+
+    background-color: red;
+}
+
+h1 {
+    color: purple;
+}
+
+p {
+    color: red;
+
 }
 
 body {
-  margin-bottom: 60px;
+    background-image: url("ANDREW.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
 }
+
+
+
+
+}
+.header {
+    top:0;
+    left:0;
+    width:auto;
+    padding:1.3rem 10%;
+    background:radial-gradient(0, 0, 0, .1);
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+
+}
+.navbar {
+    font-display: auto;
+    color:peru;
+    text-decoration: blink;
+    flow-from: inherit;
+
+}
+
