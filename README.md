@@ -8,6 +8,8 @@
 
 #### Catalin Volocaru
 
+#### Daniel-Ioan Sarmasan
+
 ## High level plan
 
 - User management system (admin and normal users)
