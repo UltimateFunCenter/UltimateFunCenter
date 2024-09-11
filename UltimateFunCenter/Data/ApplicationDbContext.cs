@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using UltimateFunCenter.Models;
 
 namespace UltimateFunCenter.Data
 {
@@ -9,5 +10,11 @@ namespace UltimateFunCenter.Data
             : base(options)
         {
         }
+        public DbSet<UltimateFunCenter.Models.Booking> Booking { get; set; } = default!;
+        public DbSet<UltimateFunCenter.Models.Facility> Facility { get; set; } = default!;
+        public DbSet<UltimateFunCenter.Models.Customer> Customer { get; set; } = default!;
+
+       
+
     }
 }
