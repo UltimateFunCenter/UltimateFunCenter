@@ -34,11 +34,12 @@ main{
     display: top ;
     text-align:center;
 }
-body {
-    background-image: url("PROJECTX.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -100;
 }
-
 
