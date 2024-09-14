@@ -1,87 +1,30 @@
 html {
   font-size: 14px;
 }
-
 @media (min-width: 768px) {
   html {
     font-size: 16px;
   }
 }
-
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
-
 html {
   position: relative;
   min-height: 100%;
   
 }
-
-
-body {
-  margin-bottom: 0px;
-}
 main{
     margin-right: 20px;
     margin-left: 20px;
 }
-
-  
-    
-
-
-
-
-
-
-
-.navbar ul{
-    list-style-type:none;
-    background-color:deeppink;
-    padding:0px;
-    margin:0px;
-    overflow:hidden;
-}
-
-.navbar a {
-    color: lightpink;
-    text-decoration: none;
-    padding: 2px;
-    display: block;
-    text-align:center;
-
-
-}
-.navbar a:hover{
-    background-color: lightgoldenrodyellow;
-=======
-    margin-bottom: 60px;
-
-
-
-    background-color: red;
-}
-
-h1 {
-    color: purple;
-}
-
-p {
-    color: red;
-
-}
-
-body {
-    background-image: url("ANDREW.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
-}
-
-
-
-
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -100;
 }
 .header {
     top:0;
@@ -94,11 +37,31 @@ body {
     z-index: 100;
 
 }
-.navbar {
-    font-display: auto;
-    color:peru;
-    text-decoration: blink;
-    flow-from: inherit;
+/* Style all font awesome icons */
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
 
+    /* Add a hover effect if you want */
+    .fa:hover {
+        opacity: 0.7;
+    }
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
 }
 

@@ -45,12 +45,20 @@
             @RenderBody()
         </main>
     </div>
-
+    <!-- The video -->
+    <video autoplay muted loop id= controls="controls">
+        <source src="~/css/video1.mp4" type="video/mp4" />
+    </video>
+       
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2024 - UltimateFunCenter - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
         </div>
     </footer>
+    
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
