@@ -10,10 +10,18 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+//builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+//.AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(
+            options =>
+            {
+                options.Stores.MaxLengthForKeys = 128;
+            })
+        .AddEntityFrameworkStores<ApplicationDbContext>()
+        .AddRoles<IdentityRole>()
+        .AddDefaultUI()
+        .AddDefaultTokenProviders();
 builder.Services.AddRazorPages();
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -36,5 +44,18 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
+
+using (var scope = app.Services.CreateScope())
+{
+    var service = scope.ServiceProvider;
+
+    var context = service.GetRequiredService<ApplicationDbContext>();
+    context.Database.Migrate();
+
+    var userMrg = service.GetRequiredService<UserManager<IdentityUser>>();
+    var roleMrg = service.GetRequiredService<RoleManager<IdentityRole>>();
+
+    IdentitySeedData.Initialize(context, userMrg, roleMrg).Wait();
+}
 
 app.Run();
