@@ -1,20 +1,18 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using UltimateFunCenter.Models;
 
 namespace UltimateFunCenter.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
+        internal object Customer;
+        internal object Facility;
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
-        public DbSet<UltimateFunCenter.Models.Booking> Booking { get; set; } = default!;
-        public DbSet<UltimateFunCenter.Models.Facility> Facility { get; set; } = default!;
-        public DbSet<UltimateFunCenter.Models.Customer> Customer { get; set; } = default!;
 
-       
-
+        public object Booking { get; internal set; }
     }
 }
