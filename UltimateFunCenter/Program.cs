@@ -21,7 +21,9 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(
         .AddRoles<IdentityRole>()
         .AddDefaultUI()
         .AddDefaultTokenProviders();
+
 builder.Services.AddRazorPages();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
