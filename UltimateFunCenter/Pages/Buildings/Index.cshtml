@@ -1,8 +1,11 @@
 ﻿@page
+@using Microsoft.AspNetCore.Authorization
 @model UltimateFunCenter.Pages.Buildings.IndexModel
+@attribute [Authorize(Roles = "Admin")]
 
 @{
     ViewData["Title"] = "Index";
+    
 }
 
 <h1>Index</h1>

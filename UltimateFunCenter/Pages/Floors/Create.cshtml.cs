@@ -12,16 +12,16 @@ namespace UltimateFunCenter.Pages.Floors
 {
     public class CreateModel : PageModel
     {
-        private readonly UltimateFunCenter.Data.ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public CreateModel(UltimateFunCenter.Data.ApplicationDbContext context)
+        public CreateModel(ApplicationDbContext context)
         {
             _context = context;
         }
 
         public IActionResult OnGet()
         {
-        ViewData["BuildingId"] = new SelectList(_context.Building, "Id", "Name");
+           ViewData["BuildingId"] = new SelectList(_context.Building, "Id", "Name");
             return Page();
         }
 

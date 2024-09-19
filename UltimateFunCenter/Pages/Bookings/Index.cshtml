@@ -1,5 +1,7 @@
 ﻿@page
+@using Microsoft.AspNetCore.Authorization
 @model UltimateFunCenter.Pages.Bookings.IndexModel
+@attribute [Authorize(Roles = "Admin")]
 
 @{
     ViewData["Title"] = "Index";
