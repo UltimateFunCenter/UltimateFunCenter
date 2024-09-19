@@ -32,13 +32,19 @@ namespace UltimateFunCenter.Pages.Bookings
         // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
 
-            _context.Bookings.Add(Booking);
-            await _context.SaveChangesAsync();
+            try
+            {
+                _context.Bookings.Add(Booking);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                if (!ModelState.IsValid)
+                {
+                    return Page();
+                }
+            }
 
             return RedirectToPage("./Index");
         }
