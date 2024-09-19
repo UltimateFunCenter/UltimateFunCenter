@@ -1,5 +1,7 @@
 ﻿@page
+@using Microsoft.AspNetCore.Authorization
 @model UltimateFunCenter.Pages.Floors.IndexModel
+@attribute [Authorize(Roles = "Admin")]
 
 @{
     ViewData["Title"] = "Index";
