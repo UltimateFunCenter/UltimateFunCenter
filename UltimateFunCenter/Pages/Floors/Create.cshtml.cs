@@ -31,13 +31,18 @@ namespace UltimateFunCenter.Pages.Floors
         // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
+            try
+            {
+                _context.Floor.Add(Floor);
+                await _context.SaveChangesAsync();
+            }catch(Exception e) { 
+            if(!ModelState.IsValid)
             {
                 return Page();
             }
+             }
 
-            _context.Floor.Add(Floor);
-            await _context.SaveChangesAsync();
+            
 
             return RedirectToPage("./Index");
         }

@@ -31,13 +31,23 @@ namespace UltimateFunCenter.Pages.Facilities
         // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return Page();
+                _context.Facilities.Add(Facility);
+                await _context.SaveChangesAsync();
+
+            }
+            catch (Exception ex) {
+
+                if (!ModelState.IsValid)
+                {
+                    return Page();
+                }
             }
 
-            _context.Facilities.Add(Facility);
-            await _context.SaveChangesAsync();
+           
+
+          
 
             return RedirectToPage("./Index");
         }
