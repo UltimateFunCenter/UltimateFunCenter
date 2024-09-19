@@ -46,3 +46,30 @@ footer social media {
     margin-top: -6px;
     color: #000000;
 }
+body {
+    text-align:right;
+    color:#6a9208;
+}
+.title-color {
+    color: blue;
+}
+
+.subtitle-color {
+    color: darkred;
+}
+
+.label-color {
+    color: green;
+}
+
+.value-color {
+    color: purple;
+}
+
+.link-color {
+    color: orange;
+}
+
+.back-link-color {
+    color: red;
+}
