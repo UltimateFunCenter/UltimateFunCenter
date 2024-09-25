@@ -2,8 +2,7 @@
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 
-<ul class="navbar-nav" style="
-background-image: url('css\whatsapp image 2024-08-03 at 20.24.37_40304d03.jpg'); background-size: cover; background-position: center;">
+<ul class="navbar-nav navbar-background">
     @if (SignInManager.IsSignedIn(User))
     {
         <li class="nav-item">
@@ -15,7 +14,8 @@ background-image: url('css\whatsapp image 2024-08-03 at 20.24.37_40304d03.jpg');
             </form>
         </li>
     }
-    else{
+    else
+    {
         <li class="nav-item">
             <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Register">Register</a>
         </li>
