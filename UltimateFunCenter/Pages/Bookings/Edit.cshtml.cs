@@ -37,7 +37,6 @@ namespace UltimateFunCenter.Pages.Bookings
             }
             Booking = booking;
            ViewData["FacilityId"] = new SelectList(_context.Facilities, "Id", "Description");
-           ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
             return Page();
         }
 
