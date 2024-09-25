@@ -73,3 +73,63 @@ body {
 .back-link-color {
     color: red;
 }
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 18px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+    
+  .table th {
+     background-color: #007bff; 
+     color: white; 
+     padding: 12px 15px;
+     font-size: 20px;
+     text-transform: uppercase; 
+    }
+
+    
+  .table td {
+     padding: 12px 15px;
+     border-bottom: 1px solid #ddd;
+    }
+
+   
+  .table tr:nth-child(even) {
+     background-color: #f1f1f1; 
+    }
+
+ .table tr:nth-child(odd) {
+    background-color: #ffffff; 
+    }
+
+    
+ .table tr:hover {
+    background-color: #e9ecef; 
+    cursor: pointer; 
+    }
+
+    
+ .table td:first-child {
+   font-weight: bold; 
+   color: #007bff; 
+    }
+
+    
+ .table a {
+   color: #007bff;
+   text-decoration: none;
+   font-weight: bold;
+    }
+
+ .table a:hover {
+   text-decoration: underline;
+   }
