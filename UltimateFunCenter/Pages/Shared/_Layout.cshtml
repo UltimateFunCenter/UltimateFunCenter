@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -42,8 +45,14 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-light" asp-area="" asp-page="/floors/index">Floors</a>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-light" asp-area="" asp-page="/bookings/index">Bookings</a>
                             </li>
-                        } else {
+                            </li>
+                        } 
+                        else if (SignInManager.IsSignedIn(User))
+                        {
                             <li class="nav-item">
                                 <a class="nav-link text-light" asp-area="" asp-page="/bookings/index">Bookings</a>
                             </li>

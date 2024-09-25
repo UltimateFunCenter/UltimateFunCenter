@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -22,7 +23,6 @@ namespace UltimateFunCenter.Pages.Bookings
         public IActionResult OnGet()
         {
         ViewData["FacilityId"] = new SelectList(_context.Facilities, "Id", "Description");
-        ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
             return Page();
         }
 
@@ -35,6 +35,7 @@ namespace UltimateFunCenter.Pages.Bookings
 
             try
             {
+                Booking.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 _context.Bookings.Add(Booking);
                 await _context.SaveChangesAsync();
             }
