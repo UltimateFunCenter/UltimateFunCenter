@@ -5,35 +5,47 @@
 
 @{
     ViewData["Title"] = "Index";
-    
 }
 
 <h1>Index</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create" class="btn btn-primary">Create New</a>
 </p>
-<table class="table" >
+
+<table class="table">
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Building[0].Name)
             </th>
-            <th></th>
+            <th>Actions</th> <!-- Action column for icon buttons -->
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Building) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Building)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <!-- Edit Button with Icon -->
+                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-outline-primary btn-sm">
+                        <i class="fas fa-edit"></i>
+                    </a>
+
+                    <!-- Details Button with Icon -->
+                    <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-outline-info btn-sm">
+                        <i class="fas fa-eye"></i>
+                    </a>
+
+                    <!-- Delete Button with Icon -->
+                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
