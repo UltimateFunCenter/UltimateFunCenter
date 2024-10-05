@@ -27,7 +27,7 @@ footer {
     bottom: 100%;
     width: 100%;
     height: 0px;
-    background: #6cf;
+    background: white;
 }
 
     footer social media {
@@ -144,3 +144,16 @@ body {
         min-width: 100%;
         min-height: 100%
     }
+body {
+    color: blue;
+}
+
+h1 {
+   
+    color: white;
+}
+
+div {
+    
+    color: white;
+}
