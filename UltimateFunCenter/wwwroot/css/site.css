@@ -1,43 +1,41 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
+
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
+
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
+
 html {
-  position: relative;
-  min-height: 100%;
-  
+    position: relative;
+    min-height: 100%;
 }
-main{
+
+main {
     margin-right: 20px;
     margin-left: 20px;
 }
-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -100;
-}
+
 footer {
     position: absolute;
     bottom: 100%;
     width: 100%;
-    height: 0px; 
+    height: 0px;
     background: #6cf;
 }
-footer social media {
-    position:fixed;
-    bottom:auto;
-    left:auto;
-}
+
+    footer social media {
+        position: fixed;
+        bottom: auto;
+        left: auto;
+    }
+
 .logo-image {
     width: 46px;
     height: 46px;
@@ -46,10 +44,17 @@ footer social media {
     margin-top: -6px;
     color: #000000;
 }
+
 body {
-    text-align:right;
-    color:#6a9208;
+    text-align: right;
+    color: #6a9208;
+    background-image: url('BG IMG rr.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
+
 .title-color {
     color: blue;
 }
@@ -82,54 +87,60 @@ body {
     color: #333;
     font-size: 18px;
     text-align: left;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
 }
 
-    
-  .table th {
-     background-color: #007bff; 
-     color: white; 
-     padding: 12px 15px;
-     font-size: 20px;
-     text-transform: uppercase; 
+    .table th {
+        background-color: #007bff;
+        color: white;
+        padding: 12px 15px;
+        font-size: 20px;
+        text-transform: uppercase;
     }
 
-    
-  .table td {
-     padding: 12px 15px;
-     border-bottom: 1px solid #ddd;
+    .table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #ddd;
     }
 
-   
-  .table tr:nth-child(even) {
-     background-color: #f1f1f1; 
+    .table tr:nth-child(even) {
+        background-color: #f1f1f1;
     }
 
- .table tr:nth-child(odd) {
-    background-color: #ffffff; 
+    .table tr:nth-child(odd) {
+        background-color: #ffffff;
     }
 
-    
- .table tr:hover {
-    background-color: #e9ecef; 
-    cursor: pointer; 
+    .table tr:hover {
+        background-color: #e9ecef;
+        cursor: pointer;
     }
 
-    
- .table td:first-child {
-   font-weight: bold; 
-   color: #007bff; 
+    .table td:first-child {
+        font-weight: bold;
+        color: #007bff;
     }
 
-    
- .table a {
-   color: #007bff;
-   text-decoration: none;
-   font-weight: bold;
+    .table a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
     }
 
- .table a:hover {
-   text-decoration: underline;
-   }
+        .table a:hover {
+            text-decoration: underline;
+        }
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+
+    .fill video {
+        flex-shrink: 0;
+        min-width: 100%;
+        min-height: 100%
+    }
