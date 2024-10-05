@@ -26,11 +26,11 @@ namespace UltimateFunCenter.Model
 
         [ForeignKey("User")]
         public string UserId {  get; set; }
-        public virtual IdentityUser User { get; set; }
+        public virtual IdentityUser? User { get; set; }
 
         [ForeignKey("Facility")]
         public int FacilityId { get; set; }
-        public virtual Facility Facility { get; set; }
+        public virtual Facility? Facility { get; set; }
 
     }
 }

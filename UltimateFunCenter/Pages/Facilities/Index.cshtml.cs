@@ -24,7 +24,8 @@ namespace UltimateFunCenter.Pages.Facilities
         public async Task OnGetAsync()
         {
             Facility = await _context.Facilities
-                .Include(f => f.Floor).ToListAsync();
+                .Include(f => f.Floor)
+                .Include("Floor.Building").ToListAsync();
         }
     }
 }
