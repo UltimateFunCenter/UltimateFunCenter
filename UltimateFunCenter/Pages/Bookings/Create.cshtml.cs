@@ -13,9 +13,9 @@ namespace UltimateFunCenter.Pages.Bookings
 {
     public class CreateModel : PageModel
     {
-        private readonly ApplicationDbContext _context;
+        private readonly UltimateFunCenter.Data.ApplicationDbContext _context;
 
-        public CreateModel(ApplicationDbContext context)
+        public CreateModel(UltimateFunCenter.Data.ApplicationDbContext context)
         {
             _context = context;
         }
@@ -32,7 +32,6 @@ namespace UltimateFunCenter.Pages.Bookings
         // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-
             try
             {
                 Booking.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -46,8 +45,7 @@ namespace UltimateFunCenter.Pages.Bookings
                     return Page();
                 }
             }
-
-            return RedirectToPage("./Index");
+                return RedirectToPage("./Index");
         }
     }
 }
