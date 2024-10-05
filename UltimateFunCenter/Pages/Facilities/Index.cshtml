@@ -4,10 +4,10 @@
 @attribute [Authorize(Roles = "Admin")]
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Facilities";
 }
 
-<h1>Index</h1>
+<h1>Facility Index</h1>
 
 <p>
     <a asp-page="Create" class="btn btn-primary">Create New</a>
@@ -20,6 +20,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Facility[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Facility[0].Floor.Building)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Facility[0].Floor)
@@ -38,7 +41,10 @@
                     @Html.DisplayFor(modelItem => item.Description)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Floor.Id)
+                    @Html.DisplayFor(modelItem => item.Floor.Building.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Floor.Level)
                 </td>
                 <td>
                     <!-- Edit Button with Icon -->

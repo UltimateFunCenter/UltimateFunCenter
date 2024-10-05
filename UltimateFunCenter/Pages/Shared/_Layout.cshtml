@@ -34,18 +34,18 @@
                             <a class="nav-link text-light" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a class="nav-link text-light" asp-area="" asp-page="/Information">Information</a>
                         </li>
 
                         @if (User.IsInRole("Admin")){
                             <li class="nav-item">
                                 <a class="nav-link text-light" asp-area="" asp-page="/buildings/index">Buildings</a>
                             </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light" asp-area="" asp-page="/floors/index">Floors</a>
+                                </li>
                             <li class="nav-item">
                                 <a class="nav-link text-light" asp-area="" asp-page="/facilities/index">Facility</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-page="/floors/index">Floors</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-light" asp-area="" asp-page="/bookings/index">Bookings</a>

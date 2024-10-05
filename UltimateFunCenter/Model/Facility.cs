@@ -13,7 +13,6 @@ namespace UltimateFunCenter.Model
         public string Description { get; set; }
         [ForeignKey("Floor")]
         public int FloorId { get; set; }
-
-        public virtual Floor Floor { get; set; }
+        public virtual Floor? Floor { get; set; }
     }
 }

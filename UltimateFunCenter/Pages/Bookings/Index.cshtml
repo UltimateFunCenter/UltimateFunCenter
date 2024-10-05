@@ -5,10 +5,10 @@
 @using System.Security.Claims
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Booking";
 }
 
-<h1>Index</h1>
+<h1>Bookings</h1>
 
 <p>
     <a asp-page="Create" class="btn btn-primary">Create New</a>
@@ -28,14 +28,14 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Booking[0].Age)
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Booking[0].HowManyPeople)
+                <th> 
+                    Total number of people
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Booking[0].HowMayMinors)
+                    Number of minors
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Booking[0].User)
+                    @Html.DisplayNameFor(model => model.Booking[0].User.Email)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Booking[0].Facility)
@@ -64,7 +64,7 @@
                         @Html.DisplayFor(modelItem => item.HowMayMinors)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.User.Id)
+                        @Html.DisplayFor(modelItem => item.User.Email)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Facility.Description)
