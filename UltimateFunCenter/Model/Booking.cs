@@ -15,6 +15,15 @@ namespace UltimateFunCenter.Model
         [Required]
         public int Duration { get; set; }
 
+        [Required]
+        public  int Age { get; set; }
+
+        [Required]
+        public int HowManyPeople { get; set; }
+
+        [Required]
+        public int HowMayMinors {  get; set; }
+
         [ForeignKey("User")]
         public string UserId {  get; set; }
         public virtual IdentityUser User { get; set; }
