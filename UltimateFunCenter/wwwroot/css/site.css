@@ -48,7 +48,7 @@ footer {
 body {
     text-align: right;
     color: #6a9208;
-    background-image: url('BG IMG rr.jpg'); 
+    background-image: url('BG IMG rr.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -132,6 +132,7 @@ body {
         .table a:hover {
             text-decoration: underline;
         }
+
 .fill {
     display: flex;
     justify-content: center;
@@ -144,16 +145,15 @@ body {
         min-width: 100%;
         min-height: 100%
     }
+
 body {
     color: blue;
 }
 
 h1 {
-   
     color: white;
 }
 
 div {
-    
     color: white;
 }
