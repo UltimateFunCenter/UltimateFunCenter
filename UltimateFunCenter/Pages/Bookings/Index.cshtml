@@ -4,6 +4,7 @@
 @using Microsoft.AspNetCore.Identity
 @using System.Security.Claims
 
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -13,7 +14,7 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
-
+@if (User.IsInRole("Admin")){
 <table class="table">
     <thead>
         <tr>
@@ -24,68 +25,120 @@
                 @Html.DisplayNameFor(model => model.Booking[0].Duration)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Booking[0].Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Booking[0].HowManyPeople)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Booking[0].HowMayMinors)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Booking[0].User)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Booking[0].Facility)
             </th>
-            <th>Actions</th> <!-- Added Action column for icon buttons -->
+            <th></th>
         </tr>
     </thead>
+    
     <tbody>
-        @if (User.IsInRole("Admin"))
-        {
-            @foreach (var item in Model.Booking)
-            {
-                <tr>
-                    <td>@Html.DisplayFor(modelItem => item.DateTime)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Duration)</td>
-                    <td>@Html.DisplayFor(modelItem => item.User.Id)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Facility.Description)</td>
-                    <td>
-                        <!-- Edit Button with Icon -->
-                        <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-outline-primary btn-sm">
-                            <i class="fas fa-edit"></i>
-                        </a>
 
-                        <!-- Details Button with Icon -->
-                        <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-outline-info btn-sm">
-                            <i class="fas fa-eye"></i>
-                        </a>
-
-                        <!-- Delete Button with Icon -->
-                        <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm">
-                            <i class="fas fa-trash-alt"></i>
-                        </a>
-                    </td>
-                </tr>
-            }
-        }
-        else
-        {
-            @foreach (var item in Model.Booking)
-            {
-                @if (item.UserId.Equals(User.FindFirstValue(ClaimTypes.NameIdentifier)))
-                {
-                    <tr>
-                        <td>@Html.DisplayFor(modelItem => item.DateTime)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Duration)</td>
-                        <td>@Html.DisplayFor(modelItem => item.User.Id)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Facility.Description)</td>
+          
+        @foreach (var item in Model.Booking) {
+                 <tr>
                         <td>
-                            <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-outline-primary btn-sm">
-                                <i class="fas fa-edit"></i>
-                            </a>
-                            <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-outline-info btn-sm">
-                                <i class="fas fa-eye"></i>
-                            </a>
-                            <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm">
-                                <i class="fas fa-trash-alt"></i>
-                            </a>
+                            @Html.DisplayFor(modelItem => item.DateTime)
                         </td>
-                    </tr>
-                }
-            }
-        }
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Duration)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Age)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HowManyPeople)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HowMayMinors)
+                        </td>
+                        <td>
+                             @Html.DisplayFor(modelItem => item.User.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Facility.Description)
+                        </td>
+                        <td>
+                            <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                            <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                        </td>
+                        </tr>
+        }   
     </tbody>
 </table>
+ }
+else {
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Booking[0].DateTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Booking[0].Duration)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Booking[0].Age)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Booking[0].HowManyPeople)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Booking[0].HowMayMinors)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Booking[0].Facility)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+
+            @foreach (var item in Model.Booking)
+            {
+                if (item.UserId.Equals(User.FindFirstValue(ClaimTypes.NameIdentifier)))
+                {
+                    <tr>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.DateTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Duration)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Age)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HowManyPeople)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HowMayMinors)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Facility.Description)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+                }
+            }
+        </tbody>
+    </table>
+}
